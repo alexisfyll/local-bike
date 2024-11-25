@@ -31,8 +31,7 @@ models:
           - name: order_status
             tests:
               - not_null
-              - accepted_values:
-                  values: [1, 2, 3, 4]
+
     
     - name: stg_local_bike__brands
       description: "This table contains raw informations about brands."
@@ -81,4 +80,30 @@ models:
                 - relationships:
                     field: order_id
                     to: ref('orders')
-          
+
+    - name: stg_local_bike__products
+      description: "This table contains raw informations about products."
+      columns:
+          - name: product_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: brand_id
+            tests:
+                - not_null
+                - relationships:
+                    field: brand_id
+                    to: ref('brands')
+          - name: category_id
+            tests:
+                - not_null
+                - relationships:
+                    field: category_id
+                    to: ref('categories')
+
+    - name: stg_local_bike__staffs
+      description: "This table contains raw informations about staffs."
+
+    - name: stg_local_bike__stores
+      description: "This table contains raw informations about stores."

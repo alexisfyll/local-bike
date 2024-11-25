@@ -39,4 +39,4 @@ models:
   local_bike_project:
     # Applies to all files under models/example/
     staging:
-      +materialized: views
+      +materialized: view
