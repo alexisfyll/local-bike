@@ -1,0 +1,109 @@
+
+version: 2
+
+models:
+    - name: stg_local_bike__orders
+      description: "This table contains raw informations about orders."
+      columns:
+          - name: order_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: customer_id
+            tests:
+                - not_null
+                - relationships:
+                    field: customer_id
+                    to: ref('customers')
+          - name: store_id
+            tests:
+                - not_null
+                - relationships:
+                    field: store_id
+                    to: ref('stores')
+          - name: staff_id
+            tests:
+                - not_null
+                - relationships:
+                    field: staff_id
+                    to: ref('staffs')
+          - name: order_status
+            tests:
+              - not_null
+
+    
+    - name: stg_local_bike__brands
+      description: "This table contains raw informations about brands."
+      columns:
+          - name: brand_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_local_bike__categories
+      description: "This table contains raw informations about categories."
+      columns:
+          - name: category_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_local_bike__customers
+      description: "This table contains raw informations about customers."
+      columns:
+          - name: customer_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_local_bike__order_items
+      description: "This table contains raw informations about order_items."
+      columns:
+          - name: order_product_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: product_id
+            tests:
+                - not_null
+                - relationships:
+                    field: product_id
+                    to: ref('products')
+          - name: order_id
+            tests:
+                - not_null
+                - relationships:
+                    field: order_id
+                    to: ref('orders')
+
+    - name: stg_local_bike__products
+      description: "This table contains raw informations about products."
+      columns:
+          - name: product_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: brand_id
+            tests:
+                - not_null
+                - relationships:
+                    field: brand_id
+                    to: ref('brands')
+          - name: category_id
+            tests:
+                - not_null
+                - relationships:
+                    field: category_id
+                    to: ref('categories')
+
+    - name: stg_local_bike__staffs
+      description: "This table contains raw informations about staffs."
+
+    - name: stg_local_bike__stores
+      description: "This table contains raw informations about stores."
