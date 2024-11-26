@@ -13,7 +13,7 @@ models:
     - name: int_local_bike__stocks
       description: "This table contains enhanced informations about each product stocks in the stores."
       columns:
-          - name: order_product_id
+          - name: stock_id
             description: "The primary key for this table"
             tests:
                 - unique

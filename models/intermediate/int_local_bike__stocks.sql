@@ -1,5 +1,6 @@
 SELECT
-  str.store_name
+  stk.stock_id  
+  , str.store_name
   , p.product_id
   , p.product_name
   , stk.quantity

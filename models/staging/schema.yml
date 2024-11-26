@@ -80,7 +80,7 @@ models:
                 - relationships:
                     field: order_id
                     to: ref('stg_local_bike__orders')
-          - name: quantitiy
+          - name: quantity
             tests:
                 - not_null
           - name: list_price
@@ -118,6 +118,7 @@ models:
 
     - name: stg_local_bike__stocks
       description: "This table contains raw informations about stocks."
+      columns:
           - name: stock_id
             description: "The primary key for this table"
             tests:
