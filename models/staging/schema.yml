@@ -115,3 +115,11 @@ models:
 
     - name: stg_local_bike__stores
       description: "This table contains raw informations about stores."
+
+    - name: stg_local_bike__stocks
+      description: "This table contains raw informations about stocks."
+          - name: stock_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
