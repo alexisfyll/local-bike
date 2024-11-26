@@ -1,5 +1,6 @@
 SELECT 
     order_month
+    , order_trunc_month
     , category_name
     , brand_name
     , store_name
@@ -11,4 +12,4 @@ SELECT
     
 FROM {{ ref("int_local_bike__order_items")}}
 
-GROUP BY 1,2,3,4
+GROUP BY 1,2,3,4,5
