@@ -4,6 +4,6 @@ SELECT
     , product_id
     , quantity
     , list_price
-    , discount
+    , COALESCE(discount, 0) as discount
 
 FROM {{ source("local_bike", "order_items") }}
