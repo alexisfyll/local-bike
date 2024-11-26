@@ -3,6 +3,7 @@ SELECT
   , o.order_id
   , o.order_date
   , FORMAT_DATE('%Y-%m', o.order_date) AS order_month
+  , DATE_TRUNC(o.order_date, MONTH) as order_trunc_month
   , o.required_date
   , o.shipped_date
   , p.product_name
