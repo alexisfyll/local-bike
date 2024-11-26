@@ -15,19 +15,19 @@ models:
                 - not_null
                 - relationships:
                     field: customer_id
-                    to: ref('customers')
+                    to: ref('stg_local_bike__customers')
           - name: store_id
             tests:
                 - not_null
                 - relationships:
                     field: store_id
-                    to: ref('stores')
+                    to: ref('stg_local_bike__stores')
           - name: staff_id
             tests:
                 - not_null
                 - relationships:
                     field: staff_id
-                    to: ref('staffs')
+                    to: ref('stg_local_bike__staffs')
           - name: order_status
             tests:
               - not_null
@@ -73,13 +73,13 @@ models:
                 - not_null
                 - relationships:
                     field: product_id
-                    to: ref('products')
+                    to: ref('stg_local_bike__products')
           - name: order_id
             tests:
                 - not_null
                 - relationships:
                     field: order_id
-                    to: ref('orders')
+                    to: ref('stg_local_bike__orders')
 
     - name: stg_local_bike__products
       description: "This table contains raw informations about products."
@@ -94,13 +94,13 @@ models:
                 - not_null
                 - relationships:
                     field: brand_id
-                    to: ref('brands')
+                    to: ref('stg_local_bike__brands')
           - name: category_id
             tests:
                 - not_null
                 - relationships:
                     field: category_id
-                    to: ref('categories')
+                    to: ref('stg_local_bike__categories')
 
     - name: stg_local_bike__staffs
       description: "This table contains raw informations about staffs."
