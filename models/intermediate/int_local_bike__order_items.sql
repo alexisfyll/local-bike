@@ -2,6 +2,7 @@ SELECT
   oi.order_product_id
   , o.order_id
   , o.order_date
+  , FORMAT_DATE('%Y-%m', o.order_date) AS order_month
   , o.required_date
   , o.shipped_date
   , p.product_name
