@@ -6,8 +6,7 @@ SELECT
   , stk.quantity
   , c.category_name
   , b.brand_name
-
-
+  , p.list_price
 
 FROM {{ ref("stg_local_bike__stocks" )}} stk
 
